@@ -109,14 +109,19 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 
 == Static Files
 
-Static files are served from the <tt>./public</tt> directory. You can specify
-a different location by setting the <tt>:public</tt> option:
+# Static files are served from the <tt>./public</tt> directory. You can specify
+静的なファイルは<tt>./public</tt>ディレクトリから提供されます. <tt>:public</tt>
+# a different location by setting the <tt>:public</tt> option:
+オプションを指定することによって任意のディレクトリを指定することもできます:
 
   set :public, File.dirname(__FILE__) + '/static'
 
-Note that the public directory name is not included in the URL. A file
-<tt>./public/css/style.css</tt> is made available as
-<tt>http://example.com/css/style.css</tt>.
+# Note that the public directory name is not included in the URL. A file
+注意すべき点として、パブリックディレクトリの名前はURLに含まれません.
+# <tt>./public/css/style.css</tt> is made available as
+つまり<tt>./public/css/style.css</tt>というファイルは
+# <tt>http://example.com/css/style.css</tt>.
+<tt>http://example.com/css/style.css</tt>として公開されます.
 
 == Views / Templates
 
