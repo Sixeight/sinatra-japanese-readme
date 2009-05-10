@@ -268,8 +268,8 @@ is rendered. You can disable layouts by passing <tt>:layout => false</tt>.
 
 == Helpers
 
-Use the top-level <tt>helpers</tt> method to define helper methods for use in
-route handlers and templates:
+<tt>helpers</tt>メソッドを使うことによって、Routeハンドラや
+テンプレートで利用できるhelperメソッドを定義できます:
 
   helpers do
     def bar(name)
