@@ -121,7 +121,7 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 # <tt>./public/css/style.css</tt> is made available as
 つまり<tt>./public/css/style.css</tt>というファイルは
 # <tt>http://example.com/css/style.css</tt>.
-<tt>http://example.com/css/style.css</tt>として公開されます.
+<tt>http://example.com/css/style.css</tt> として公開されます.
 
 == Views / Templates
 
