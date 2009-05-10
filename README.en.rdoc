@@ -20,10 +20,10 @@ Gemをインストールして以下のように実行します:
 # View at: http://localhost:4567
 http://localhost:4567 にアクセスすることによって動作を確認できます
 
-== ルーティング
+== Routes
 
 # In Sinatra, a route is an HTTP method paired with an URL matching pattern.
-Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッチするパターンです
+RouteはHTTPメソッドと対になったURLにマッチするパターンです
 # Each route is associated with a block:
 それぞれのルートはブロックをともないます:
 
@@ -44,12 +44,12 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
   end
 
 # Routes are matched in the order they are defined. The first route that
-リクエストされたルートは定義されたルートパターンによってマッチングを行い、
+Routeは定義された順にマッチングが行われ、
 # matches the request is invoked.
 最初にマッチしたものが実行されます
 
 # Route patterns may include named parameters, accessible via the
-ルートパターンは名前付きパラメータを持つことができ、それらには
+Routeパターンは名前付きパラメータを持つことができ、それらには
 # <tt>params</tt> hash:
 <tt>params</tt>ハッシュによってアクセスできます:
 
@@ -67,7 +67,7 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
   end
 
 # Route patterns may also include splat (or wildcard) parameters, accessible
-ルートパターンはsplat(ワイルドカード)パラメータを持つことができ、
+Routeパターンはsplat(ワイルドカード)パラメータを持つことができ、
 # via the <tt>params[:splat]</tt> array.
 配列<tt>params['splat']</tt>によってアクセスできます
 
@@ -96,7 +96,7 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
   end
 
 # Routes may include a variety of matching conditions, such as the user agent:
-ルートはいくつかの状態を指定してマッチさせることができます、
+Routeにはマッチングに使用するいくつかの状態を指定してすることができます.
 例えばユーザエージェントを指定して:
 
   get '/foo', :agent => /Songbird (\d\.\d)[\d\/]*?/ do
