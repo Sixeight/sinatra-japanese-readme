@@ -299,9 +299,12 @@ route handlers and templates:
 
 == Filters
 
-Before filters are evaluated before each request within the context of the
-request and can modify the request and response. Instance variables set in
-filters are accessible by routes and templates:
+# Before filters are evaluated before each request within the context of the
+Before filterは各リクエストを評価する前に、そのリクエストのコンテキストにおいて
+# request and can modify the request and response. Instance variables set in
+実行され、任意の処理を行ったりrequestやresponseを修正することが可能です
+# filters are accessible by routes and templates:
+Before filterにおいて定義したインスタンス変数はテンプレートや、ルートからアクセスできます:
 
   before do
     @note = 'Hi!'
