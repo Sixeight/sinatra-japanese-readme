@@ -1,5 +1,7 @@
 = Sinatra
 
+# Sinatra is a DSL for quickly creating web-applications in Ruby with minimal
+# effort:
 Sinatraは最小限の記述で素早くWebアプリケーションを記述するためのRubyによるDSLです:
 
   # myapp.rb
@@ -9,16 +11,20 @@ Sinatraは最小限の記述で素早くWebアプリケーションを記述す�
     'Hello world!'
   end
 
+# Install the gem and run with:
 Gemをインストールして以下のように実行します:
 
   sudo gem install sinatra
   ruby myapp.rb
 
+# View at: http://localhost:4567
 http://localhost:4567 にアクセスすることによって動作を確認できます
 
 == ルーティング
 
+# In Sinatra, a route is an HTTP method paired with an URL matching pattern.
 Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッチするパターンです
+# Each route is associated with a block:
 それぞれのルートはブロックをともないます:
 
   get '/' do
@@ -37,10 +43,14 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
     .. 何かを削除 ..
   end
 
+# Routes are matched in the order they are defined. The first route that
 リクエストされたルートは定義されたルートパターンによってマッチングを行い、
+# matches the request is invoked.
 最初にマッチしたものが実行されます
 
+# Route patterns may include named parameters, accessible via the
 ルートパターンは名前付きパラメータを持つことができ、それらには
+# <tt>params</tt> hash:
 <tt>params</tt>ハッシュによってアクセスできます:
 
   get '/hello/:name' do
@@ -49,13 +59,16 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
     "Hello #{params[:name]}!"
   end
 
+# You can also access named parameters via block parameters:
 また、ブロック引数としても取得することもできます:
 
   get '/hello/:name' do |n|
     "Hello #{n}!"
   end
 
+# Route patterns may also include splat (or wildcard) parameters, accessible
 ルートパターンはsplat(ワイルドカード)パラメータを持つことができ、
+# via the <tt>params[:splat]</tt> array.
 配列<tt>params['splat']</tt>によってアクセスできます
 
   get '/say/*/to/*' do
@@ -68,18 +81,21 @@ Sinatraにおいて、ルートはHTTPメソッドと対になったURLにマッ
     params[:splat] # => ["path/to/file", "xml"]
   end
 
+# Route matching with Regular Expressions:
 正規表現によるマッチも可能です
 
   get %r{/hello/([\w]+)} do
     "Hello, #{params[:captures].first}!"
   end
 
+# Or with a block parameter:
 ブロック引数によってアクセスできます:
 
   get %r{/hello/([\w]+)} do |c|
     "Hello, #{c}!"
   end
 
+# Routes may include a variety of matching conditions, such as the user agent:
 ルートはいくつかの状態を指定してマッチさせることができます、
 例えばユーザエージェントを指定して:
 
