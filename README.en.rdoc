@@ -502,17 +502,24 @@ with other test frameworks such as RSpec, Bacon, and test/spec.
 
 == Command line
 
-Sinatra applications can be run directly:
+# Sinatra applications can be run directly:
+Sinatraで作成したアプリケションは直接起動することができます:
 
   ruby myapp.rb [-h] [-x] [-e ENVIRONMENT] [-p PORT] [-s HANDLER]
 
-Options are:
+# Options are:
+以下のようなコマンドラインオプションが利用できます:
 
-  -h # help
-  -p # set the port (default is 4567)
-  -e # set the environment (default is development)
-  -s # specify rack server/handler (default is thin)
-  -x # turn on the mutex lock (default is off)
+#   -h # help
+  -h # ヘルプを表示
+#   -p # set the port (default is 4567)
+  -p # 使用するポートを指定 (デフォルト 4567)
+#   -e # set the environment (default is development)
+  -e # 実行環境を指定 (デフォルト development)
+#   -s # specify rack server/handler (default is thin)
+  -s # 使用するサーバ／ハンドラを指定 (デフォルト thin)
+#   -x # turn on the mutex lock (default is off)
+  -x # Mutexによるロックを使用する (デフォルト off)
 
 == The Bleeding Edge
 
