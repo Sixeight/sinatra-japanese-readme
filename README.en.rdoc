@@ -125,8 +125,10 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 
 == Views / Templates
 
-Templates are assumed to be located directly under the <tt>./views</tt>
-directory. To use a different views directory:
+# Templates are assumed to be located directly under the <tt>./views</tt>
+テンプレートは<tt>./views</tt>に配置されていると仮定しているが、
+# directory. To use a different views directory:
+以下のようにして別のディレクトリを指定することも出来る:
 
   set :views, File.dirname(__FILE__) + '/templates'
 
