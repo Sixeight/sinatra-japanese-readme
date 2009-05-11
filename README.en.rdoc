@@ -471,8 +471,10 @@ typically don't have to +use+ them explicitly.
 
 == Testing
 
-The Sinatra::Test mixin and Sinatra::TestHarness class include a variety of
-helper methods for testing your Sinatra app:
+# The Sinatra::Test mixin and Sinatra::TestHarness class include a variety of
+Sinatra::TestミックスインとSinatra::TestHarnessクラスはSinatraアプリケーション
+# helper methods for testing your Sinatra app:
+のテストに利用できる豊富なヘルパーメソッドを用意しています:
 
   require 'my_sinatra_app'
   require 'test/unit'
@@ -497,8 +499,10 @@ helper methods for testing your Sinatra app:
     end
   end
 
-See http://www.sinatrarb.com/testing.html for more on Sinatra::Test and using it
-with other test frameworks such as RSpec, Bacon, and test/spec.
+# See http://www.sinatrarb.com/testing.html for more on Sinatra::Test and using it
+さらに http://www.sinatrarb.com/testing.html にSinatra::Testを使った例や、RSpecや
+# with other test frameworks such as RSpec, Bacon, and test/spec.
+Bacon, test/specのような他のテストフレームワークを利用した例があります
 
 == Command line
 

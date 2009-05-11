@@ -438,8 +438,8 @@ typically don't have to +use+ them explicitly.
 
 == Testing
 
-The Sinatra::Test mixin and Sinatra::TestHarness class include a variety of
-helper methods for testing your Sinatra app:
+Sinatra::TestミックスインとSinatra::TestHarnessクラスはSinatraアプリケーション
+のテストに利用できる豊富なヘルパーメソッドを用意しています:
 
   require 'my_sinatra_app'
   require 'test/unit'
@@ -464,8 +464,8 @@ helper methods for testing your Sinatra app:
     end
   end
 
-See http://www.sinatrarb.com/testing.html for more on Sinatra::Test and using it
-with other test frameworks such as RSpec, Bacon, and test/spec.
+さらに http://www.sinatrarb.com/testing.html にSinatra::Testを使った例や、RSpecや
+Bacon, test/specのような他のテストフレームワークを利用した例があります
 
 == Command line
 
