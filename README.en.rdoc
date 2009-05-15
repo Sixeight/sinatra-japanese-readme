@@ -408,32 +408,39 @@ routeは直ちに処理を中止して次にマッチしたrouteに処理を移�
 
 === Error
 
-The +error+ handler is invoked any time an exception is raised from a route
-block or before filter. The exception object can be obtained from the
-<tt>sinatra.error</tt> Rack variable:
+# The +error+ handler is invoked any time an exception is raised from a route
++error+ ハンドラは、RouteかBefore filterで例外が発生したときに呼び出されます.
+# block or before filter. The exception object can be obtained from the
+例外オブジェクトは<tt>sinatra.error</tt>Rack環境変数から取得できます:
+# <tt>sinatra.error</tt> Rack variable:
 
   error do
-    'Sorry there was a nasty error - ' + env['sinatra.error'].name
+    'すみません　手に負えないエラーが発生しました - ' + env['sinatra.error'].name
   end
 
 Custom errors:
 
   error MyCustomError do
-    'So what happened was...' + request.env['sinatra.error'].message
+    'おっと、いま起こったのは...' + request.env['sinatra.error'].message
   end
 
-Then, if this happens:
+# Then, if this happens:
+このとき、以下のように例外が発生すると:
 
   get '/' do
-    raise MyCustomError, 'something bad'
+    raise MyCustomError, 'なにかの間違い'
   end
 
-You get this:
+# You get this:
+このようなメッセージを見ることができます:
 
-  So what happened was... something bad
+#  So what happened was... something bad
+  おっと、いま起こったのは... 何かの間違い
 
-Sinatra installs special <tt>not_found</tt> and <tt>error</tt> handlers when
-running under the development environment.
+# Sinatra installs special <tt>not_found</tt> and <tt>error</tt> handlers when
+Sinatraはdevelopment環境で実行したときだけ、特別な<tt>not_found</tt>と<tt>error</tt>
+# running under the development environment.
+ハンドラを用意します
 
 == Mime types
 
