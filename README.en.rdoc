@@ -533,16 +533,21 @@ Sinatraで作成したアプリケションは直接起動することができ�
 
 == The Bleeding Edge
 
-If you would like to use Sinatra's latest bleeding code, create a local
-clone and run your app with the <tt>sinatra/lib</tt> directory on the
-<tt>LOAD_PATH</tt>:
+# If you would like to use Sinatra's latest bleeding code, create a local
+もしあなたがSinatraの最新のコードを利用したければ、以下のようにローカルに
+# clone and run your app with the <tt>sinatra/lib</tt> directory on the
+最新のリポジトリをcloneして、<tt>sinatra/lib</tt>を<tt>LOAD_PATH</tt>に
+# <tt>LOAD_PATH</tt>:
+に加えた上でアプリケーションを実行してください:
 
   cd myapp
   git clone git://github.com/sinatra/sinatra.git
   ruby -Isinatra/lib myapp.rb
 
-Alternatively, you can add the <tt>sinatra/lib<tt> directory to the
-<tt>LOAD_PATH</tt> in your application:
+# Alternatively, you can add the <tt>sinatra/lib<tt> directory to the
+また以下のようにして、あなたのアプリケーションの中で<tt>LOAD_PATH</tt>
+# <tt>LOAD_PATH</tt> in your application:
+を指定することができます:
 
   $LOAD_PATH.unshift File.dirname(__FILE__) + '/sinatra/lib'
   require 'rubygems'
@@ -552,7 +557,8 @@ Alternatively, you can add the <tt>sinatra/lib<tt> directory to the
     "I'm running version " + Sinatra::VERSION
   end
 
-To update the Sinatra sources in the future:
+# To update the Sinatra sources in the future:
+Sinatraのソースを最新のものにするには以下のようにします:
 
   cd myproject/sinatra
   git pull
