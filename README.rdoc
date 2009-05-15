@@ -330,21 +330,20 @@ routeは直ちに処理を中止して次にマッチしたrouteに処理を移�
 
 == Configuration
 
-Run once, at startup, in any environment:
+以下はSinatraを起動したときに、実行環境によらず一度だけ実行されます:
 
   configure do
     ...
   end
 
-Run only when the environment (RACK_ENV environment variable) is set to
-<tt>:production</tt>:
+以下は実行環境(環境変数RACK_ENVの値）が<tt>:production</tt>に設定されている
+ときだけ実行されます:
 
   configure :production do
     ...
   end
 
-Run when the environment is set to either <tt>:production</tt> or
-<tt>:test</tt>:
+以下は<tt>:production</tt>もしくは<tt>:test</tt>の時に実行されます
 
   configure :production, :test do
     ...
