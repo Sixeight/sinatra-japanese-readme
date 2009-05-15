@@ -433,8 +433,10 @@ running under the development environment.
 
 == Mime types
 
-When using <tt>send_file</tt> or static files you may have mime types Sinatra
-doesn't understand. Use +mime+ to register them by file extension:
+# When using <tt>send_file</tt> or static files you may have mime types Sinatra
+<tt>send_file</tt>を使用したとき、Sinatraは静的ファイルのMIMEタイプをあなたが
+# doesn't understand. Use +mime+ to register them by file extension:
+期待するようには理解できません. +mime+メソッドを使ってファイルの拡張子を登録してください:
 
   mime :foo, 'text/foo'
 
