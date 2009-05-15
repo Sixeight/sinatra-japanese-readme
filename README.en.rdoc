@@ -332,10 +332,9 @@ Before filterにおいて定義したインスタンス変数はテンプレー�
   halt
 
 # You can also specify a body when halting ...
-# FIXME: 本体はおかしい
-また、特定の本体を指定することもできます
+また、レスポンスのbodyを指定することもできます
 
-  halt 'ここが本体になります'
+  halt 'ここがbodyになります'
 
 # Or set the status and body ...
 さらにステータスコードを指定することも出来ます
