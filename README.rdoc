@@ -351,9 +351,9 @@ routeは直ちに処理を中止して次にマッチしたrouteに処理を移�
 
 == Error handling
 
-Error handlers run within the same context as routes and before filters, which
-means you get all the goodies it has to offer, like <tt>haml</tt>, <tt>erb</tt>,
-<tt>halt</tt>, etc.
+エラーハンドラはRouteやBefore filterと同じコンテキストで実行されます. これは
+必要とされるすべての機能、たとえば<tt>haml</tt>や<tt>erb</tt>、<tt>halt</tt>
+などを利用できるということです:
 
 === Not Found
 
