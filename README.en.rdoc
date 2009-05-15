@@ -397,11 +397,13 @@ routeは直ちに処理を中止して次にマッチしたrouteに処理を移�
 
 === Not Found
 
-When a <tt>Sinatra::NotFound</tt> exception is raised, or the response's status
-code is 404, the <tt>not_found</tt> handler is invoked:
+# When a <tt>Sinatra::NotFound</tt> exception is raised, or the response's status
+例外<tt>Sinatra::NotFound</tt>が発生するか、レスポンスのステータスコードが404だった場合は
+# code is 404, the <tt>not_found</tt> handler is invoked:
+<tt>not_found</tt>ハンドラが呼び出されます:
 
   not_found do
-    'This is nowhere to be found'
+    'ファイルが見つかりませんでした'
   end
 
 === Error
