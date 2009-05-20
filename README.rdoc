@@ -245,7 +245,7 @@ NOTE: Sinatraをrequireしているソースファイル内に定義されたIn-
 
 === Named Templates
 
-Templates may also be defined using the top-level <tt>template</tt> method:
+テンプレートはまたトップレベルの<tt>template</tt>メソッドによっても定義できます:
 
   template :layout do
     "%html\n  =yield\n"
@@ -259,8 +259,9 @@ Templates may also be defined using the top-level <tt>template</tt> method:
     haml :index
   end
 
-If a template named "layout" exists, it will be used each time a template
-is rendered. You can disable layouts by passing <tt>:layout => false</tt>.
+もし"layout'と言う名前のテンプレートが存在した場合、すべてのテンプレートの
+レンダリング時に同時にレンダリングされます. もしレイアウトを使いたくない場合は
+<tt>:layout => false</tt>を指定することによってオフにで来ます:
 
   get '/' do
     haml :index, :layout => !request.xhr?
