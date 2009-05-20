@@ -112,30 +112,30 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 忘れてはいけないことはテンプレートはシンボルで参照するということだ。
 たとえサブディレクトリに配置していたとしても（例えばこんな具合だ
 <tt>:'subdir/template'</tt>). レンダーメソッドに文字列を渡したところで
-一切描画しない.
+一切レンダリングしない.
 
 === Haml Templates
 
-The haml gem/library is required to render HAML templates:
+HAMLテンプレートをレンダリングするためにはhaml gemをrequireする必要がある:
 
-  ## You'll need to require haml in your app
+  ## あなたのアプリケーション内でrequireする
   require 'haml'
 
   get '/' do
     haml :index
   end
 
-Renders <tt>./views/index.haml</tt>.
+このように記述すると<tt>./views/indes.haml</tt>をレンダリングします
 
 {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
-can be set globally through Sinatra's configurations,
-see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
-and overridden on an individual basis.
+はSinatraのConfigurationsを用いてグローバルに設定することが可能である
+くわしくは {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+を見てください. またレンダリング時に個別に上書きして設定することも出来ます
 
-  set :haml, {:format => :html5 } # default Haml format is :xhtml
+  set :haml, {:format => :html5 } # デフォルトのHamlフォーマットは:xhtmlです
 
   get '/' do
-    haml :index, :haml_options => {:format => :html4 } # overridden
+    haml :index, :haml_options => {:format => :html4 } # 上書き
   end
 
 
