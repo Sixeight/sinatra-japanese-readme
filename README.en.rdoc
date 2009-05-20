@@ -155,7 +155,7 @@ HAMLテンプレートをレンダリングするためにはhaml gemをrequire�
   end
 
 # Renders <tt>./views/index.haml</tt>.
-<tt>./views/indes.haml</tt>をレンダリングします
+<tt>./views/index.haml</tt>をレンダリングします
 
 # {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
 {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
@@ -184,7 +184,7 @@ HAMLテンプレートをレンダリングするためにはhaml gemをrequire�
   end
 
 # Renders <tt>./views/index.erb</tt>
-<tt>./views/indes.erb</tt>をレンダリングします
+<tt>./views/index.erb</tt>をレンダリングします
 
 === Builder Templates
 
@@ -201,13 +201,15 @@ Builderテンプレートをレンダリングするにはbuilder gemをrequire�
   end
 
 # Renders <tt>./views/index.builder</tt>.
-<tt>./views/indes.builder</tt>をレンダリングします
+<tt>./views/index.builder</tt>をレンダリングします
 
 === Sass Templates
 
-The sass gem/library is required to render Sass templates:
+# The sass gem/library is required to render Sass templates:
+Sassテンプレートをレンダリングするにはsass gemをrequireする必要ああります:
 
-  ## You'll need to require haml or sass in your app
+#  ## You'll need to require haml or sass in your app
+  ## あなたのアプリケーション内でrequire 'sass' しなければならない
   require 'sass'
 
   get '/stylesheet.css' do
@@ -215,18 +217,23 @@ The sass gem/library is required to render Sass templates:
     sass :stylesheet
   end
 
-Renders <tt>./views/stylesheet.sass</tt>.
+# Renders <tt>./views/stylesheet.sass</tt>.
+<tt>./views/stylesheet/index.sass</tt>をレンダリングします
 
+# {Sass' options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html]
 {Sass' options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html]
-can be set globally through Sinatra's configurations,
-see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
-and overridden on an individual basis.
+# can be set globally through Sinatra's configurations,
+はSinatraのConfigurationsを用いてグローバルに設定することが可能である
+# see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+くわしくは {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+# and overridden on an individual basis.
+を見てください. またレンダリング時に個別に上書きして設定することも出来ます
 
-  set :sass, {:style => :compact } # default Sass style is :nested
+  set :sass, {:style => :compact } # デフォルトのSassスタイルは :nested です
 
   get '/stylesheet.css' do
     content_type 'text/css', :charset => 'utf-8'
-    sass :stylesheet, :sass_options => {:style => :expanded } # overridden
+    sass :stylesheet, :sass_options => {:style => :expanded } # 上書き
   end
 
 
