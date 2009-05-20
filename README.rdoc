@@ -125,7 +125,7 @@ HAMLテンプレートをレンダリングするためにはhaml gemをrequire�
     haml :index
   end
 
-このように記述すると<tt>./views/indes.haml</tt>をレンダリングします
+<tt>./views/indes.haml</tt>をレンダリングします
 
 {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
 はSinatraのConfigurationsを用いてグローバルに設定することが可能である
@@ -148,13 +148,13 @@ HAMLテンプレートをレンダリングするためにはhaml gemをrequire�
     erb :index
   end
 
-このように記述すると<tt>./views/indes.erb</tt>をレンダリングします
+<tt>./views/indes.erb</tt>をレンダリングします
 
 === Builder Templates
 
-The builder gem/library is required to render builder templates:
+Builderテンプレートをレンダリングするにはbuilder gemをrequireする必要ああります:
 
-  ## You'll need to require builder in your app
+  ## あなたのアプリケーション内でrequire 'buildr' しなければならない
   require 'builder'
 
   get '/' do
@@ -162,7 +162,7 @@ The builder gem/library is required to render builder templates:
     builder :index
   end
 
-Renders <tt>./views/index.builder</tt>.
+<tt>./views/indes.builder</tt>をレンダリングします
 
 === Sass Templates
 
