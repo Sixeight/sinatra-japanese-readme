@@ -273,7 +273,8 @@ Sassテンプレートをレンダリングするにはsass gemをrequireする�
 
 === In-file Templates
 
-Templates may be defined at the end of the source file:
+# Templates may be defined at the end of the source file:
+テンプレートはソースファイルの末尾に定義することが出来ます:
 
   require 'rubygems'
   require 'sinatra'
@@ -291,9 +292,12 @@ Templates may be defined at the end of the source file:
   @@ index
   %div.title Hello world!!!!!
 
-NOTE: In-file templates defined in the source file that requires sinatra
-are automatically loaded. Call the <tt>use_in_file_templates!</tt>
-method explicitly if you have in-file templates in other source files.
+# NOTE: In-file templates defined in the source file that requires sinatra
+NOTE: Sinatraをrequireしているソースファイル内に定義されたIn-fileテンプレート
+# are automatically loaded. Call the <tt>use_in_file_templates!</tt>
+は自動的に読み込まれます. もしほかのソースファイルに定義している場合は
+# method explicitly if you have in-file templates in other source files.
+明示的に<tt>user_in_file_templates!</tt>メソッドを呼び出す必要があります.
 
 === Named Templates
 
