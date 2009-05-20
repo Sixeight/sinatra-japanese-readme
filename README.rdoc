@@ -104,15 +104,15 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 
 == Views / Templates
 
-Templates are assumed to be located directly under the <tt>./views</tt>
-directory. To use a different views directory:
+テンプレートは<tt>./views</tt>に配置されていると仮定しているが、
+以下のようにして別のディレクトリを指定することも出来る:
 
   set :views, File.dirname(__FILE__) + '/templates'
 
-One important thing to remember is that you always have to reference
-templates with symbols, even if they're in a subdirectory (in this
-case use <tt>:'subdir/template'</tt>). Rendering methods will render
-any strings passed to them directly.
+忘れてはいけないことはテンプレートはシンボルで参照するということだ。
+たとえサブディレクトリに配置していたとしても（例えばこんな具合だ
+<tt>:'subdir/template'</tt>). レンダーメソッドに文字列を渡したところで
+一切描画しない.
 
 === Haml Templates
 

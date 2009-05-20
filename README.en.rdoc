@@ -132,10 +132,14 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 
   set :views, File.dirname(__FILE__) + '/templates'
 
-One important thing to remember is that you always have to reference
-templates with symbols, even if they're in a subdirectory (in this
-case use <tt>:'subdir/template'</tt>). Rendering methods will render
-any strings passed to them directly.
+# One important thing to remember is that you always have to reference
+忘れてはいけないことはテンプレートはシンボルで参照するということだ。
+# templates with symbols, even if they're in a subdirectory (in this
+たとえサブディレクトリに配置していたとしても（例えばこんな具合だ
+# case use <tt>:'subdir/template'</tt>). Rendering methods will render
+<tt>:'subdir/template'</tt>). レンダーメソッドに文字列を渡したところで
+# any strings passed to them directly.
+一切描画しない.
 
 === Haml Templates
 
