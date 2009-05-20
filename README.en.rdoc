@@ -125,57 +125,74 @@ Routeにはマッチングに使用するいくつかの状態を指定してす
 
 == Views / Templates
 
-Templates are assumed to be located directly under the <tt>./views</tt>
-directory. To use a different views directory:
+# Templates are assumed to be located directly under the <tt>./views</tt>
+テンプレートは<tt>./views</tt>に配置されていると仮定しているが、
+# directory. To use a different views directory:
+以下のようにして別のディレクトリを指定することも出来る:
 
   set :views, File.dirname(__FILE__) + '/templates'
 
-One important thing to remember is that you always have to reference
-templates with symbols, even if they're in a subdirectory (in this
-case use <tt>:'subdir/template'</tt>). Rendering methods will render
-any strings passed to them directly.
+# One important thing to remember is that you always have to reference
+忘れてはいけないことはテンプレートはシンボルで参照するということだ。
+# templates with symbols, even if they're in a subdirectory (in this
+たとえサブディレクトリに配置していたとしてもである（例えばこんな具合だ
+# case use <tt>:'subdir/template'</tt>). Rendering methods will render
+<tt>:'subdir/template'</tt>). レンダーメソッドに文字列を渡したところで
+# any strings passed to them directly.
+一切レンダリングしない.
 
 === Haml Templates
 
-The haml gem/library is required to render HAML templates:
+# The haml gem/library is required to render HAML templates:
+HAMLテンプレートをレンダリングするためにはhaml gemをrequireする必要がある:
 
-  ## You'll need to require haml in your app
+#  ## You'll need to require haml in your app
+  ## あなたのアプリケーション内でrequire 'haml' しなければならない
   require 'haml'
 
   get '/' do
     haml :index
   end
 
-Renders <tt>./views/index.haml</tt>.
+# Renders <tt>./views/index.haml</tt>.
+<tt>./views/index.haml</tt>をレンダリングします
 
+# {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
 {Haml's options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html]
-can be set globally through Sinatra's configurations,
-see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
-and overridden on an individual basis.
+# can be set globally through Sinatra's configurations,
+はSinatraのConfigurationsを用いてグローバルに設定することが可能である
+# see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+くわしくは {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+# and overridden on an individual basis.
+を見てください. またレンダリング時に個別に上書きして設定することも出来ます
 
-  set :haml, {:format => :html5 } # default Haml format is :xhtml
+  set :haml, {:format => :html5 } # デフォルトのHamlフォーマットは:xhtmlです
 
   get '/' do
-    haml :index, :haml_options => {:format => :html4 } # overridden
+    haml :index, :haml_options => {:format => :html4 } # 上書き
   end
 
 
 === Erb Templates
 
-  ## You'll need to require erb in your app
+#  ## You'll need to require erb in your app
+  ## あなたのアプリケーション内でrequire 'erb' しなければならない
   require 'erb'
 
   get '/' do
     erb :index
   end
 
-Renders <tt>./views/index.erb</tt>
+# Renders <tt>./views/index.erb</tt>
+<tt>./views/index.erb</tt>をレンダリングします
 
 === Builder Templates
 
-The builder gem/library is required to render builder templates:
+# The builder gem/library is required to render builder templates:
+Builderテンプレートをレンダリングするにはbuilder gemをrequireする必要ああります:
 
-  ## You'll need to require builder in your app
+#  ## You'll need to require builder in your app
+  ## あなたのアプリケーション内でrequire 'buildr' しなければならない
   require 'builder'
 
   get '/' do
@@ -183,13 +200,16 @@ The builder gem/library is required to render builder templates:
     builder :index
   end
 
-Renders <tt>./views/index.builder</tt>.
+# Renders <tt>./views/index.builder</tt>.
+<tt>./views/index.builder</tt>をレンダリングします
 
 === Sass Templates
 
-The sass gem/library is required to render Sass templates:
+# The sass gem/library is required to render Sass templates:
+Sassテンプレートをレンダリングするにはsass gemをrequireする必要ああります:
 
-  ## You'll need to require haml or sass in your app
+#  ## You'll need to require haml or sass in your app
+  ## あなたのアプリケーション内でrequire 'sass' しなければならない
   require 'sass'
 
   get '/stylesheet.css' do
@@ -197,18 +217,23 @@ The sass gem/library is required to render Sass templates:
     sass :stylesheet
   end
 
-Renders <tt>./views/stylesheet.sass</tt>.
+# Renders <tt>./views/stylesheet.sass</tt>.
+<tt>./views/stylesheet/index.sass</tt>をレンダリングします
 
+# {Sass' options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html]
 {Sass' options}[http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html]
-can be set globally through Sinatra's configurations,
-see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
-and overridden on an individual basis.
+# can be set globally through Sinatra's configurations,
+はSinatraのConfigurationsを用いてグローバルに設定することが可能である
+# see {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+くわしくは {Options and Configurations}[http://www.sinatrarb.com/configuration.html],
+# and overridden on an individual basis.
+を見てください. またレンダリング時に個別に上書きして設定することも出来ます
 
-  set :sass, {:style => :compact } # default Sass style is :nested
+  set :sass, {:style => :compact } # デフォルトのSassスタイルは :nested です
 
   get '/stylesheet.css' do
     content_type 'text/css', :charset => 'utf-8'
-    sass :stylesheet, :sass_options => {:style => :expanded } # overridden
+    sass :stylesheet, :sass_options => {:style => :expanded } # 上書き
   end
 
 
@@ -218,31 +243,38 @@ and overridden on an individual basis.
     haml '%div.title Hello World'
   end
 
-Renders the inlined template string.
+# Renders the inlined template string.
+インライン文字列をレンダリングします
 
 === Accessing Variables in Templates
 
-Templates are evaluated within the same context as route handlers. Instance
-variables set in route handlers are direcly accessible by templates:
+# Templates are evaluated within the same context as route handlers. Instance
+テンプレートはRouteハンドラと同じコンテキストで評価されます. Routeハンドラで
+# variables set in route handlers are direcly accessible by templates:
+で定義したインスタンス変数はテンプレートから直接参照ることができます:
 
   get '/:id' do
     @foo = Foo.find(params[:id])
     haml '%h1= @foo.name'
   end
 
-Or, specify an explicit Hash of local variables:
+# Or, specify an explicit Hash of local variables:
+もしくは、Hashによってローカル変数を明示的に指定することが可能です:
 
   get '/:id' do
     foo = Foo.find(params[:id])
     haml '%h1= foo.name', :locals => { :foo => foo }
   end
 
-This is typically used when rendering templates as partials from within
-other templates.
+# This is typically used when rendering templates as partials from within
+この方法は、レンダリングするテンプレートが他のテンプレートの一部(partials)
+# other templates.
+である場合によく使われます
 
 === In-file Templates
 
-Templates may be defined at the end of the source file:
+# Templates may be defined at the end of the source file:
+テンプレートはソースファイルの末尾に定義することが出来ます:
 
   require 'rubygems'
   require 'sinatra'
@@ -260,13 +292,17 @@ Templates may be defined at the end of the source file:
   @@ index
   %div.title Hello world!!!!!
 
-NOTE: In-file templates defined in the source file that requires sinatra
-are automatically loaded. Call the <tt>use_in_file_templates!</tt>
-method explicitly if you have in-file templates in other source files.
+# NOTE: In-file templates defined in the source file that requires sinatra
+NOTE: Sinatraをrequireしているソースファイル内に定義されたIn-fileテンプレート
+# are automatically loaded. Call the <tt>use_in_file_templates!</tt>
+は自動的に読み込まれます. もしほかのソースファイルに定義している場合は
+# method explicitly if you have in-file templates in other source files.
+明示的に<tt>user_in_file_templates!</tt>メソッドを呼び出す必要があります.
 
 === Named Templates
 
-Templates may also be defined using the top-level <tt>template</tt> method:
+# Templates may also be defined using the top-level <tt>template</tt> method:
+テンプレートはまたトップレベルの<tt>template</tt>メソッドによっても定義できます:
 
   template :layout do
     "%html\n  =yield\n"
@@ -280,8 +316,11 @@ Templates may also be defined using the top-level <tt>template</tt> method:
     haml :index
   end
 
-If a template named "layout" exists, it will be used each time a template
-is rendered. You can disable layouts by passing <tt>:layout => false</tt>.
+# If a template named "layout" exists, it will be used each time a template
+もし"layout'と言う名前のテンプレートが存在した場合、すべてのテンプレートの
+# is rendered. You can disable layouts by passing <tt>:layout => false</tt>.
+レンダリング時に同時にレンダリングされます. もしレイアウトを使いたくない場合は
+<tt>:layout => false</tt>を指定することによってオフにで来ます:
 
   get '/' do
     haml :index, :layout => !request.xhr?
