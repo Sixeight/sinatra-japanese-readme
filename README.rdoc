@@ -197,7 +197,7 @@ Sassテンプレートをレンダリングするにはsass gemをrequireする�
     haml '%div.title Hello World'
   end
 
-Renders the inlined template string.
+インライン文字列をレンダリングします
 
 === Accessing Variables in Templates
 
